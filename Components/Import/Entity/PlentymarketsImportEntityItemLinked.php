@@ -116,6 +116,14 @@ class PlentymarketsImportEntityItemLinked
 			{
 				$table = 's_articles_similar';
 			}
+            else if ($LinkedItem->Relationship == 'ReplacementPart')
+			{
+				$table = 'plenty_replacement_part';
+			}
+            else if ($LinkedItem->Relationship == 'Bundle')
+			{
+				$table = 'plenty_bundle';
+			}
 			else
 			{
 				continue;

@@ -635,6 +635,26 @@ class Shopware_Plugins_Backend_PlentyConnector_Bootstrap extends Shopware_Compon
 			  KEY `timestamp` (`timestamp`)
 			) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 		");
+
+		Shopware()->Db()->exec("
+			CREATE TABLE IF NOT EXISTS `plenty_replacement_part` (
+              `id` int(11) NOT NULL AUTO_INCREMENT,
+              `articleID` int(30) NOT NULL,
+              `relatedarticle` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+              PRIMARY KEY (`id`),
+              UNIQUE KEY `articleID` (`articleID`,`relatedarticle`)
+            ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+		");
+
+		Shopware()->Db()->exec("
+			CREATE TABLE IF NOT EXISTS `plenty_bundle` (
+              `id` int(11) NOT NULL AUTO_INCREMENT,
+              `articleID` int(30) NOT NULL,
+              `relatedarticle` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+              PRIMARY KEY (`id`),
+              UNIQUE KEY `articleID` (`articleID`,`relatedarticle`)
+            ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+		");
 	}
 
     /**
