@@ -69,6 +69,8 @@ class PlentymarketsImportEntityItemLinked
 	{
 		Shopware()->Db()->delete('s_articles_relationships', 'articleID = ' . $this->SHOPWARE_itemId);
 		Shopware()->Db()->delete('s_articles_similar', 'articleID = ' . $this->SHOPWARE_itemId);
+		Shopware()->Db()->delete('plenty_replacement_part', 'articleID = ' . $this->SHOPWARE_itemId);
+		Shopware()->Db()->delete('plenty_bundle', 'articleID = ' . $this->SHOPWARE_itemId);
 	}
 
 	/**
